@@ -1,8 +1,8 @@
 package org.example;
 
-public class OrderByQuickSort extends OrdenaçãoDados {
+public class OrderByQuickSort extends OrdenacaoDados {
     public OrderByQuickSort() {
-        algoritmoDeOrdenação = new QuickSort();
+        algoritmoDeOrdenacao = new QuickSort();
 
     }
 }

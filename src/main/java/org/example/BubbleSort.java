@@ -1,17 +1,19 @@
 package org.example;
 
-public class BubbleSort implements AlgoritmoDeOrdenação{
-    @Override
-    public int[] ordenarDados(int[] dados) {
+import java.util.ArrayList;
 
-        int n = dados.length;
+public class BubbleSort implements AlgoritmoDeOrdenacao{
+    @Override
+    public ArrayList<Integer> ordenarDados(ArrayList<Integer> dados) {
+
+        int n = dados.size();
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (dados[j] > dados[j + 1]) {
+                if (dados.get(j) > dados.get(j + 1)) {
                     // Troca os elementos
-                    int temp = dados[j];
-                    dados[j] = dados[j + 1];
-                    dados[j + 1] = temp;
+                    int temp = dados.get(j);
+                    dados.set(j, dados.get(j + 1));
+                    dados.set(j + 1, temp);
                 }
             }
         }

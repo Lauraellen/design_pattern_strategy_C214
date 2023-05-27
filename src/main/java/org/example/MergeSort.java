@@ -1,34 +1,29 @@
 package org.example;
 
-public class MergeSort implements AlgoritmoDeOrdenação{
+import java.util.ArrayList;
+
+public class MergeSort implements AlgoritmoDeOrdenacao{
     @Override
-    public int[] ordenarDados(int[] dados) {
-        mergeSort(dados, 0, dados.length - 1);
+    public ArrayList<Integer> ordenarDados(ArrayList<Integer> dados) {
+        mergeSort(dados, 0, dados.size() - 1);
+        System.out.println("dados => " + dados);
         return dados;
     }
 
-    public static void mergeSort(int[] array, int left, int right) {
+    public static void mergeSort(ArrayList<Integer> array, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
 
-
-
             mergeSort(array, left, mid);
             mergeSort(array, mid + 1, right);
-
-
 
             merge(array, left, mid, right);
         }
     }
 
-
-
-    public static void merge(int[] array, int left, int mid, int right) {
+    public static void merge(ArrayList<Integer> array, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
-
-
 
         int[] leftArray = new int[n1];
         int[] rightArray = new int[n2];
@@ -36,10 +31,10 @@ public class MergeSort implements AlgoritmoDeOrdenação{
 
 
         for (int i = 0; i < n1; ++i) {
-            leftArray[i] = array[left + i];
+            leftArray[i] = array.get(left + i);
         }
         for (int j = 0; j < n2; ++j) {
-            rightArray[j] = array[mid + 1 + j];
+            rightArray[j] = array.get(mid + 1 + j);
         }
 
 
@@ -51,10 +46,10 @@ public class MergeSort implements AlgoritmoDeOrdenação{
 
         while (i < n1 && j < n2) {
             if (leftArray[i] <= rightArray[j]) {
-                array[k] = leftArray[i];
+                array.set(k, leftArray[i]);
                 i++;
             } else {
-                array[k] = rightArray[j];
+                array.set(k, rightArray[j]);
                 j++;
             }
             k++;
@@ -63,7 +58,7 @@ public class MergeSort implements AlgoritmoDeOrdenação{
 
 
         while (i < n1) {
-            array[k] = leftArray[i];
+            array.set(k, leftArray[i]);
             i++;
             k++;
         }
@@ -71,7 +66,7 @@ public class MergeSort implements AlgoritmoDeOrdenação{
 
 
         while (j < n2) {
-            array[k] = rightArray[j];
+            array.set(k, rightArray[j]);
             j++;
             k++;
         }

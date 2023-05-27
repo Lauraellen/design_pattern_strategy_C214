@@ -1,7 +1,7 @@
 package org.example;
 
-public class OrderByBubbleSort extends OrdenaçãoDados{
+public class OrderByBubbleSort extends OrdenacaoDados{
     public OrderByBubbleSort() {
-        algoritmoDeOrdenação = new BubbleSort();
+        algoritmoDeOrdenacao = new BubbleSort();
     }
 }

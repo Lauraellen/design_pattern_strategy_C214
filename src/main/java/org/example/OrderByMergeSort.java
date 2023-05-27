@@ -1,9 +1,9 @@
 package org.example;
 
-public class OrderByMergeSort extends OrdenaçãoDados {
+public class OrderByMergeSort extends OrdenacaoDados {
 
     public OrderByMergeSort() {
-        algoritmoDeOrdenação = new MergeSort();
+        algoritmoDeOrdenacao = new MergeSort();
 
     }
 }

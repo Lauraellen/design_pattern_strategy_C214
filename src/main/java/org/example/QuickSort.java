@@ -1,13 +1,15 @@
 package org.example;
 
-public class QuickSort implements AlgoritmoDeOrdenação{
+import java.util.ArrayList;
+
+public class QuickSort implements AlgoritmoDeOrdenacao{
     @Override
-    public int[] ordenarDados(int[] dados) {
-        quickSort(dados, 0, dados.length - 1);
+    public ArrayList<Integer> ordenarDados(ArrayList<Integer> dados) {
+        quickSort(dados, 0, dados.size() - 1);
         return dados;
     }
 
-    public static void quickSort(int[] array, int low, int high) {
+    public static void quickSort(ArrayList<Integer> array, int low, int high) {
         if (low < high) {
             int pivotIndex = partition(array, low, high);
             quickSort(array, low, pivotIndex - 1);
@@ -17,14 +19,14 @@ public class QuickSort implements AlgoritmoDeOrdenação{
 
 
 
-    public static int partition(int[] array, int low, int high) {
-        int pivot = array[high];
+    public static int partition(ArrayList<Integer> array, int low, int high) {
+        int pivot = array.get(high);
         int i = low - 1;
 
 
 
         for (int j = low; j < high; j++) {
-            if (array[j] <= pivot) {
+            if (array.get(j) <= pivot) {
                 i++;
                 swap(array, i, j);
             }
@@ -38,9 +40,9 @@ public class QuickSort implements AlgoritmoDeOrdenação{
 
 
 
-    public static void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+    public static void swap(ArrayList<Integer> array, int i, int j) {
+        int temp = array.get(i);
+        array.set(i, array.get(j));
+        array.set(j, temp);
     }
 }
