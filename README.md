@@ -22,7 +22,8 @@
 ## Descrição
 
 O trabalho consiste em utilizar o design pattern Strategy 
-para implementar um sistema capaz de ordenar dados.
+para implementar um sistema capaz de ordenar dados, com três
+algoritimos diferentes.
 
 
 ## Execução
