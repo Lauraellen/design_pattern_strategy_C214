@@ -5,6 +5,7 @@ import org.example.OrderByQuickSort;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -56,18 +57,10 @@ public class TestOrdenacao {
         assertEquals(ordenacaoDados.realizarOrdenacao(dados), dadosEsperado);
     }
 
-    @Test
+    @Test(expected = EmptyStackException.class)
     public void testeArrayVazio() {
         ordenacaoDados = new OrderByBubbleSort();
         ArrayList<Integer> dados = new ArrayList<>();
-        dados.add(5);
-        dados.add(3);
-        dados.add(1);
-
-        ArrayList<Integer> dadosEsperado = new ArrayList<>();
-        dadosEsperado.add(1);
-        dadosEsperado.add(3);
-        dadosEsperado.add(5);
-        assertEquals(ordenacaoDados.realizarOrdenacao(dados), dadosEsperado);
+        ordenacaoDados.realizarOrdenacao(dados);
     }
 }
